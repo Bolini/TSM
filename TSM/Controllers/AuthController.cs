@@ -18,8 +18,8 @@ namespace TSM.Controllers
         {
             return View();
         }
-
-        public IActionResult Login(string returnUrl = "/")
+        [HttpGet]
+        public IActionResult Login(string returnUrl = "/auth/callback")
         {
             return Challenge(new AuthenticationProperties() { RedirectUri = returnUrl });
         }

@@ -43,7 +43,7 @@ namespace TSM
             {
                 options.ClientId = Configuration["GitHub:ClientId"];
                 options.ClientSecret = Configuration["GitHub:ClientSecret"];
-                options.CallbackPath = new PathString("/github-oauth");
+                options.CallbackPath = new PathString("/auth/callback");
                 options.AuthorizationEndpoint = "https://github.com/login/oauth/authorize";
                 options.TokenEndpoint = "https://github.com/login/oauth/access_token";
                 options.UserInformationEndpoint = "https://api.github.com/user";
@@ -87,7 +87,7 @@ namespace TSM
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthentication();
-            //app.UseAuthorization();
+            app.UseAuthorization();
             /*app.UseMvc(routes =>
             {
                 routes.MapRoute(
