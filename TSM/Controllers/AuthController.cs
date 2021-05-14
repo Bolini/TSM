@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using TSM.Models;
 
 namespace TSM.Controllers
 {
@@ -19,7 +20,7 @@ namespace TSM.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult Login(string returnUrl = "/auth/callback")
+        public IActionResult Login(string returnUrl = "/")
         {
             return Challenge(new AuthenticationProperties() { RedirectUri = returnUrl });
         }
