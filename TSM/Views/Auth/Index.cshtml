@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "TSM";
 }
-
+<div class="cont">
 <div class="border-bottom">
     <nav class="navbar navbar-expand-md navbar-light ">
         @*<img src="~/Images/mirror-ball.png" width="30" height="30" class="d-inline-block alignt-top" loading="lazy" />*@
@@ -143,4 +143,28 @@
             </div>*@
 
     }
+</div>
+
+
+    <div class="childcont">
+        <h2 style="position: relative;left:2em;top:1em;font-weight:bold">Welcome to <span style="color:#AA2DD6">Title</span>!</h2>
+        <div class="logwrap">
+        
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+        
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+            <div class="lwrap">
+                <button type="submit" class="submitbtn">Login</button>
+                <a style ="color:#497CFF"; href="https://www.google.se/">Forgot password?</a>
+            </div>
+            <div class="oauthwrap">log in with github / other</div>
+        </div>
+        <div class="regwrap">
+            <p>Don't have an account yet?</p>
+            <button type="submit" class="submitbtn2" style="type-weight:bold; color:#EAEAEA;">Create an account</button>
+        </div>
+    </div>
+    <div class="childcont2"><h1>Title</h1><p>Lorem ipsum dolor sit<br> amet, consectetur <br>adipiscing elit.</p></div>
 </div>

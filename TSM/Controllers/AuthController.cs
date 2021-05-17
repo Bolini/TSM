@@ -19,6 +19,10 @@ namespace TSM.Controllers
         {
             return View();
         }
+        public IActionResult view1()
+        {
+            return View();
+        }
         [HttpGet]
         public IActionResult Login(string returnUrl = "/")
         {
