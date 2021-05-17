@@ -3,6 +3,40 @@
     ViewData["Title"] = "TSM";
 }
 
-<div class="test" style="color:red">ppp</div>
-<button type="submit" class="gamebtn">Games</button>
-<button type="submit" class="chatbtn">Chat</button>
+<h1 style="text-align: center;position:relative;top:4em;">Welcome back 
+    <span style="font-weight:bold;color:#7921AF">Ruth</span>!</h1>
+<div class="wrapper">
+    <button type="submit" class="gamebtn">Games</button>
+    <button type="submit" class="chatbtn">Chat</button>
+</div>
+<style>
+.wrapper {
+    position: absolute;
+    background-color:none;
+    width:100%;
+    text-align:center;
+    top:50%;
+    left:0%;
+}
+.gamebtn, .chatbtn  {
+    display:inline-block;
+    background-color:red;
+    padding:1.5em 5em;
+    border:none;
+    margin-right:2em;
+    background: #9C66F4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 27px;
+    font-style: normal;
+    font-weight: bold;
+    color:white;
+    font-size:2em;
+    transition: transform .3s;
+    perspective: 1000px;
+}
+.gamebtn:hover, .chatbtn:hover {
+    -ms-transform: scale(1.05); /* IE 9 */
+    -webkit-transform: scale(1.05); /* Safari 3-8 */
+    transform: scale(1.1); 
+}
+</style>
