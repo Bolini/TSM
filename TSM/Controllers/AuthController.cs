@@ -23,6 +23,11 @@ namespace TSM.Controllers
         {
             return View();
         }
+        public IActionResult Games()
+        {
+            return View();
+        }
+
         [HttpGet]
         public IActionResult Login(string returnUrl = "/")
         {

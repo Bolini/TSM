@@ -1,0 +1,84 @@
+@model IndexModel
+@{
+    ViewData["Title"] = "TSM";
+}
+<div class="topcont">
+    <button type="submit" class="btn1">Join us on may 14 for quiz-friday!</button>
+    <button type="submit" class="btn2">Join us on may 14 for quiz-friday!</button>
+</div>
+<h1 style="text-align: center;position:relative;top:4em;">Pick a game!</h1>
+<div class="botcont">
+    <button type="submit" class="game1">Game1</button>
+    <button type="submit" class="game2">Game1</button>
+    <br>
+    <button type="submit" class="game3">Game1</button>
+    <button type="submit" class="game4">Game1</button>
+    <br>
+    <button type="submit" class="game5">Game1</button>
+    <button type="submit" class="game6">Game1</button>
+</div>
+
+<style>
+.topcont {
+    position: absolute;
+    background-color:none;
+    width:70%;
+    text-align:left;
+}
+.btn1, .btn2 {
+        display:inline-block;
+    background-color:red;
+    padding:1.5em 5em;
+    border:none;
+    background: linear-gradient(90deg, #6C1DA6 3.69%, #7612A0 97.05%);
+    border-radius: 20px;
+    font-style: normal;
+    font-weight: bold;
+    color:white;
+    font-size:1em;
+}
+.botcont {
+    position: absolute;
+    background-color:none;
+    width:100%;
+    text-align:center;
+    top:35%;
+    right:0%;
+}
+.game1, .game2, .game3, .game4, .game5, .game6  {
+    display:inline-block;
+    padding:1.5em 5em;
+    border:none;
+    background: #9C66F4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 27px;
+    font-style: normal;
+    font-weight: bold;
+    color:white;
+    font-size:2em;
+    margin-top:1em;
+    margin-right:1em;
+}
+.game1, .game2, .game3, .game4, .game5, .game6  {
+    display:inline-block;
+    padding:1.5em 5em;
+    border:none;
+    background: #9C66F4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 27px;
+    font-style: normal;
+    font-weight: bold;
+    color:white;
+    font-size:2em;
+    margin-top:1em;
+    margin-right:1em;
+    transition: transform .3s;
+    perspective: 1000px;
+}
+.game1:hover, .game2:hover, .game3:hover, .game4:hover, .game5:hover,.game6:hover {
+    background-color:red;
+    -ms-transform: scale(1.05); /* IE 9 */
+    -webkit-transform: scale(1.05); /* Safari 3-8 */
+    transform: scale(1.1);
+}
+</style>
