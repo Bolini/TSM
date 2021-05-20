@@ -2,11 +2,26 @@
 @{
     ViewData["Title"] = "TSM";
 }
+<div class="border-bottom">
+    <nav class="navbar navbar-expand-md navbar-light ">
+        @*<img src="~/Images/mirror-ball.png" width="30" height="30" class="d-inline-block alignt-top" loading="lazy" />*@
+        <h2 class="px-2">@ViewData["Title"]</h2>
+        <div class="navbar-nav ml-auto">
+            <a asp-area="" asp-controller="Home" asp-action="Settings">
+                <button type="button" class="btn btn-light btn-sm">
+                    <img src="~/Images/settings_black_24dp.svg" width="30" height="30" class="d-inline-block" loading="lazy" />
+                </button>
+            </a>
+        </div>
+    </nav>
+</div>
 
 <h1 style="text-align: center;position:relative;top:4em;">Welcome back 
     <span style="font-weight:bold;color:#7921AF">Ruth</span>!</h1>
 <div class="wrapper">
-    <button type="submit" class="gamebtn">Games</button>
+    <a asp-action="Games" asp-controller="Auth">
+        <button type="submit" class="gamebtn">Games</button>
+    </a>
     <button type="submit" class="chatbtn">Chat</button>
 </div>
 <style>

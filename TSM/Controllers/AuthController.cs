@@ -19,7 +19,7 @@ namespace TSM.Controllers
         {
             return View();
         }
-        public IActionResult view1()
+        public IActionResult View1()
         {
             return View();
         }
@@ -28,10 +28,16 @@ namespace TSM.Controllers
             return View();
         }
 
+        public IActionResult Chat()
+        {
+            return View();
+        }
+
         [HttpGet]
         public IActionResult Login(string returnUrl = "/")
         {
-            return Challenge(new AuthenticationProperties() { RedirectUri = returnUrl });
+            Challenge(new AuthenticationProperties() { RedirectUri = returnUrl });
+            return RedirectToAction("View1");
         }
     }
 }

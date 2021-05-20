@@ -2,6 +2,22 @@
 @{
     ViewData["Title"] = "TSM";
 }
+<div class="border-bottom">
+    <nav class="navbar navbar-expand-md navbar-light ">
+        <a href="javascript:void(0);" onclick="history.go(-1);">
+            <img src="~/Images/arrow_back_ios_new_black_24dp.svg" width="30" height="30" class="d-inline-block align-top" loading="lazy" />
+        </a>
+        <h2 class="px-2">@ViewData["Title"]</h2>
+        <div class="navbar-nav ml-auto">
+            <a asp-area="" asp-controller="Home" asp-action="Settings">
+                <button type="button" class="btn btn-light btn-sm">
+                    <img src="~/Images/settings_black_24dp.svg" width="30" height="30" class="d-inline-block" loading="lazy" />
+                </button>
+            </a>
+        </div>
+    </nav>
+</div>
+
 <div class="topcont">
     <button type="submit" class="btn1">Join us on may 14 for quiz-friday!</button>
     <button type="submit" class="btn2">Join us on may 14 for quiz-friday!</button>
