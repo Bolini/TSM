@@ -36,7 +36,7 @@ namespace TSM
             services.AddRazorPages();
             services.AddSignalR();
 
-            //services.AddControllersWithViews();
+            services.AddControllersWithViews();
 
             services.AddAuthentication(options =>
             {
@@ -94,7 +94,7 @@ namespace TSM
                 //app.UseHsts();
             }
             //app.UseMvc();
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
 
             app.UseStaticFiles();
 
@@ -102,13 +102,13 @@ namespace TSM
 
             app.UseAuthentication();
 
-            //app.UseAuthorization();
+            app.UseAuthorization();
             
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
                 endpoints.MapRazorPages();
-                endpoints.MapHub<ChatHub>("/chatHub");
+                endpoints.MapHub<ChatHub>("/Auth/Chatter");
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Auth}/{action=Index}/{id?}");
