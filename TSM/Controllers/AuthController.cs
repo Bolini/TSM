@@ -33,6 +33,12 @@ namespace TSM.Controllers
             return View();
         }
 
+        public IActionResult Messages()
+        {
+            //hämta och skicka lista på vänner från db till vy när möjligt
+            return View();
+        }
+
         [HttpGet]
         public IActionResult Login(string returnUrl = "/")
         {
