@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using TSM.Models;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace TSM.Controllers
 {
@@ -15,12 +17,29 @@ namespace TSM.Controllers
     {
         private readonly ILogger<AuthController> _logger;
 
+        [HttpGet]
         public IActionResult Index()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                CurrentUser = "David";                  // Test
+                ViewData["CurrentUser"] = CurrentUser;  // Test
+                return RedirectToAction("View1");
+            }
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Index(string s)
+        {
+            CurrentUser = s;
+            ViewData["CurrentUser"] = CurrentUser;
+            return RedirectToAction("View1");
+        }
+
         public IActionResult View1()
         {
+            ViewData["CurrentUser"] = CurrentUser;
             return View();
         }
         public IActionResult Games()
@@ -30,6 +49,7 @@ namespace TSM.Controllers
 
         public IActionResult Chat()
         {
+            ViewData["CurrentUser"] = CurrentUser;
             return View();
         }
 
@@ -42,8 +62,25 @@ namespace TSM.Controllers
         [HttpGet]
         public IActionResult Login(string returnUrl = "/")
         {
-            Challenge(new AuthenticationProperties() { RedirectUri = returnUrl });
-            return RedirectToAction("View1");
+            CurrentUser = "David";                  // Test
+            ViewData["CurrentUser"] = CurrentUser;  // Test
+            return Challenge(new AuthenticationProperties() { RedirectUri = returnUrl });
+            //return RedirectToAction("View1");
+        }
+
+        public string CurrentUser
+        {
+            get
+            {
+                if (HttpContext.Session.GetString("CurrentUser") == null)
+                    return "Ruth";//Default värde
+
+                return Convert.ToString(JsonConvert.DeserializeObject(HttpContext.Session.GetString("CurrentUser")));
+            }
+            set
+            {
+                HttpContext.Session.SetString("CurrentUser", JsonConvert.SerializeObject(value));
+            }
         }
     }
 }

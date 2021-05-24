@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using TSM.Models;
 
 namespace TSM.Controllers
@@ -25,6 +27,7 @@ namespace TSM.Controllers
 
         public IActionResult Settings()
         {
+            ViewData["CurrentUser"] = CurrentUser;
             return View();
         }
 
@@ -37,6 +40,21 @@ namespace TSM.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public string CurrentUser
+        {
+            get
+            {
+                if (HttpContext.Session.GetString("CurrentUser") == null)
+                    return "Ruth";//Default värde
+
+                return Convert.ToString(JsonConvert.DeserializeObject(HttpContext.Session.GetString("CurrentUser")));
+            }
+            set
+            {
+                HttpContext.Session.SetString("CurrentUser", JsonConvert.SerializeObject(value));
+            }
         }
     }
 }

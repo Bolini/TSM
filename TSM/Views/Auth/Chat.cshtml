@@ -1,6 +1,7 @@
 ﻿
 @{
     ViewData["Title"] = "Chat";
+    var CurrentUser = ViewData["CurrentUser"];
 }
 
 <div class="border-bottom">
@@ -23,11 +24,11 @@
     <div class="row">&nbsp;</div>
     <div class="row">
         <div class="col-2">User</div>
-        <div class="col-4"><input type="text" id="userInput" /></div>
+        <div class="col-4"><input type="text" id="userInput" value="@CurrentUser" readonly/></div>
     </div>
     <div class="row">
         <div class="col-2">Message</div>
-        <div class="col-4"><input type="text" id="messageInput" /></div>
+        <div class="col-4"><input type="text" id="messageInput" placeholder="Message"/></div>
     </div>
     <div class="row">&nbsp;</div>
     <div class="row">

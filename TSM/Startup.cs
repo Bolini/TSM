@@ -35,6 +35,8 @@ namespace TSM
         {
             services.AddRazorPages();
             services.AddSignalR();
+            services.AddSession();
+            //services.AddMvc();
 
             services.AddControllersWithViews();
 
@@ -95,7 +97,7 @@ namespace TSM
             }
             //app.UseMvc();
             app.UseHttpsRedirection();
-
+            app.UseSession();
             app.UseStaticFiles();
 
             app.UseRouting();
