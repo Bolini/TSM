@@ -61,15 +61,20 @@
         
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>
-            <div class="lwrap">
-                <button type="submit" class="submitbtn">Login</button>
-                <a style ="color:#497CFF"; href="https://www.google.se/">Forgot password?</a>
+
+                <div class="lwrap">
+                    <a asp-action="Login" asp-controller="Authenticate">
+                        <button type="submit" class="submitbtn">Login</button>
+                    </a>
+
+                </div>
+                <div class="oauthwrap"><a asp-action="Login" asp-controller="Auth"> Login in with github / other</a></div>
             </div>
-            <div class="oauthwrap"><a asp-action="Login" asp-controller="Auth"> Login in with github / other</a></div>
-        </div>
         <div class="regwrap">
             <p>Don't have an account yet?</p>
-            <button type="submit" class="submitbtn2" style="type-weight:bold; color:#EAEAEA;">Create an account</button>
+            <a asp-action="Register" asp-controller="Authenticate">
+                <button type="submit" class="submitbtn2" style="type-weight:bold; color:#EAEAEA;">Create an account</button>
+            </a>
         </div>
     </div>
     <div class="childcont2"><h1>Title</h1><p>Lorem ipsum dolor sit<br> amet, consectetur <br>adipiscing elit.</p></div>
