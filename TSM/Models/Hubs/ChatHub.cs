@@ -8,7 +8,12 @@ namespace TSM.Models.Hubs
     {
         public async Task SendMessage(string user, string message)
         {
-            await Clients.All.SendAsync("RecieveMessage", user, message);
+            await Clients.All.SendAsync("ReceiveMessage", user, message);
+        }
+
+        public async Task TestMessage()
+        {
+            await Clients.All.SendAsync("ReceiveMessage", "Test", "Testar123");
         }
     }
 }
