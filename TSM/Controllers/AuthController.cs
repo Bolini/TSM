@@ -46,6 +46,10 @@ namespace TSM.Controllers
         {
             return View();
         }
+        public IActionResult Game1()
+        {
+            return View();
+        }
 
         public IActionResult Chat()
         {
